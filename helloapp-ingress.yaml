@@ -13,3 +13,17 @@ spec:
                 serviceName: helloapp-1
                 servicePort: 8080
               path: /
+    - host: helloword-v2.info
+      http:
+           paths:
+           -  backend:
+                serviceName: helloapp-2
+                servicePort: 8080
+              path: /
+    - host: helloword-v3.info
+      http:
+           paths:
+           -  backend:
+                serviceName: httpdku
+                servicePort: 80
+              path: /
