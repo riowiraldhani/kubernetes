@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: helloapp-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+    - host: helloword-v1.info
+      http:
+           paths:
+           -  backend:
+                serviceName: helloapp-1
+                servicePort: 8080
+              path: /
